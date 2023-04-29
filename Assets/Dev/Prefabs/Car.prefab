@@ -10499,6 +10499,7 @@ GameObject:
   - component: {fileID: 8298849441961519479}
   - component: {fileID: 4020271438850824046}
   - component: {fileID: 8109120645079351896}
+  - component: {fileID: 5598918766125706082}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -10574,7 +10575,7 @@ MonoBehaviour:
   RRWParticleSystem: {fileID: 5589206622629963448}
   RLWTireSkid: {fileID: 1247473745886326391}
   RRWTireSkid: {fileID: 1247473746255010993}
-  useUI: 0
+  useUI: 1
   carSpeedText: {fileID: 0}
   useSounds: 0
   carEngineSound: {fileID: 0}
@@ -10588,6 +10589,19 @@ MonoBehaviour:
   carSpeed: 0
   isDrifting: 0
   isTractionLocked: 0
+--- !u!114 &5598918766125706082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674143119658251213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4702ca9b080761440a40e216708106d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vcam: {fileID: 0}
 --- !u!1 &8966734885866089204
 GameObject:
   m_ObjectHideFlags: 0
