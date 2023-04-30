@@ -16,7 +16,7 @@ public class ShakeCamera : MonoBehaviour
         if (collision.gameObject.CompareTag("Crash")) AnimShakeCamera();
     }
 
-    void AnimShakeCamera()
+    public void AnimShakeCamera()
     {
         noise.m_AmplitudeGain = 3;
         LeanTween.delayedCall(0.5f, () => {
