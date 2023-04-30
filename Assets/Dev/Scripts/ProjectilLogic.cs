@@ -11,8 +11,16 @@ public class ProjectilLogic : MonoBehaviour
     [SerializeField] private Transform der;
     [SerializeField] private float capFuerza;
 
+    [SerializeField] TypeMail typeMailSelected;
     private void Update()
     {
+        // Select Type  1 2 3
+        if (Input.GetKeyDown(KeyCode.Alpha1)) typeMailSelected = TypeMail.Red;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) typeMailSelected = TypeMail.Blue;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) typeMailSelected = TypeMail.Green;
+
+
+
         if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.D))
         {
             if (fuerza < capFuerza) fuerza++;
@@ -33,9 +41,10 @@ public class ProjectilLogic : MonoBehaviour
     
     private void Lanzar(Vector3 direct, Vector3 dir)
     {
-
         GameObject a = Instantiate(prefabProjectil, dir, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
-        a.GetComponent<ProjectilFuerza>().AplicarFuerza(fuerza, direct);
+        ProjectilFuerza projectil= a.GetComponent<ProjectilFuerza>();
+        projectil.typeMail = typeMailSelected;
+        projectil.AplicarFuerza(fuerza, direct);
         fuerza = 200;
     }
 }

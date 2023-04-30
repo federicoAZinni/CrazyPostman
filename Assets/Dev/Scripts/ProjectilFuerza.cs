@@ -6,11 +6,10 @@ public class ProjectilFuerza : MonoBehaviour
 {
 
     [SerializeField] Rigidbody r;
+    public TypeMail typeMail;
 
-    // 
     public void AplicarFuerza(float fuerza, Vector3 direct)
     {
-        
         r.AddForce(direct * fuerza);
         r.AddRelativeTorque(Vector3.one * 25);
         LeanTween.delayedCall(5, () => {
@@ -22,14 +21,9 @@ public class ProjectilFuerza : MonoBehaviour
         });
     }
 
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.CompareTag("ObjetivoDeEntrega"))
-        {
-            Debug.Log("Entrego caja");
-            LeanTween.cancel(gameObject);
-            Destroy(gameObject);
-        }
-    }
+}
 
+public enum TypeMail
+{
+    Red,Green,Blue
 }
