@@ -24,17 +24,17 @@ public class ProjectilLogic : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
-            Lanzar(izq.forward);
+            Lanzar(izq.forward, izq.position);
         }
         
-        if (Input.GetKeyUp(KeyCode.RightArrow)) Lanzar(der.forward);
+        if (Input.GetKeyUp(KeyCode.RightArrow)) Lanzar(der.forward, der.position);
 
     }
     
-    private void Lanzar(Vector3 direct)
+    private void Lanzar(Vector3 direct, Vector3 pos)
     {
 
-        GameObject a = Instantiate(prefabProjectil, direct, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
+        GameObject a = Instantiate(prefabProjectil, pos, Quaternion.Euler(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
         a.GetComponent<ProjectilFuerza>().AplicarFuerza(fuerza, direct);
         fuerza = 200;
     }
