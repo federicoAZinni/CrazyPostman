@@ -1615,7 +1615,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748750212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1666,8 +1666,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748750212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.383, z: 3.03}
-  m_LocalScale: {x: 2.0607, y: 2.0607, z: 2.0607}
+  m_LocalPosition: {x: 19.79, y: 1.17, z: 0.16}
+  m_LocalScale: {x: 10.116126, y: 2.0607, z: 1.2103933}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2829,6 +2829,9 @@ MonoBehaviour:
   car: {fileID: 261786958575332365}
   cam: {fileID: 261786958575332364}
   r: {fileID: 261786958575332366}
+  divisionVel: 1.5
+  multiplicacionArriba: 400
+  limiteImpulso: 7000
 --- !u!33 &337777900483379820
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3097,6 +3100,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1501189049203755120, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501189049203755121, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.199352
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501189049203755121, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7248437
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501189049203755121, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501189049203755121, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.070964575
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501189049203755121, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.27636948
+      objectReference: {fileID: 0}
     - target: {fileID: 4612015557990017873, guid: e3bb5f1e4c2dba7468713b9e1c18f16a,
         type: 3}
       propertyPath: carSpeedText
@@ -3177,7 +3210,8 @@ PrefabInstance:
       propertyPath: vcam
       value: 
       objectReference: {fileID: 73075911}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1501189049203755120, guid: e3bb5f1e4c2dba7468713b9e1c18f16a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e3bb5f1e4c2dba7468713b9e1c18f16a, type: 3}
 --- !u!4 &4784106739908600512
 Transform:
