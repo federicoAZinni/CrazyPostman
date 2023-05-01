@@ -5,6 +5,7 @@ using UnityEngine;
 public class Buzon : MonoBehaviour
 {
     [SerializeField] Rigidbody[] bodys;
+    [SerializeField] GameObject vfxHit;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class Buzon : MonoBehaviour
             foreach (var item in bodys)
             {
                 item.isKinematic = false;
+                vfxHit.SetActive(true);
             }
         }
     }
