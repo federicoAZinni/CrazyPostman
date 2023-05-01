@@ -46,7 +46,8 @@ public class TriggerMail : MonoBehaviour
                     gameObject.SetActive(false);
                     transform.localScale = Vector3.one* 0.02f;
                 });
-                }
+                FindObjectOfType<AudioManager>().Play("EntregaPaquete");
+            }
 
         }
     }
