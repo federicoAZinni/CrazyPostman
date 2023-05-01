@@ -13,8 +13,10 @@ public class Trash : MonoBehaviour
         {
             if (!crashed)
             {
+                FindObjectOfType<AudioManager>().Play("ChoqueObstaculo");
                 trashNormal.SetActive(false);
                 trashCrashed.SetActive(true);
+                
             }
         }
         
