@@ -12,10 +12,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - PostProcess
+  - Wheels
   - Water
   - UI
-  - 
+  - Crash
   - 
   - Pointer
   - Not_In_Minimap
