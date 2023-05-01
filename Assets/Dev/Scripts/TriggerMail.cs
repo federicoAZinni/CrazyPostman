@@ -5,16 +5,20 @@ using UnityEngine;
 public class TriggerMail : MonoBehaviour
 {
     public TypeMail typeMail;
+    MeshRenderer mesh;
 
-    private void Start()
+    private void Awake()
     {
-        MeshRenderer mesh = GetComponent<MeshRenderer>();
+        mesh = GetComponent<MeshRenderer>();
+    }
 
+    private void OnEnable()
+    {
         switch (typeMail)
         {
             case TypeMail.Red:
-                mesh.material.color= Color.red;
-                mesh.material.SetColor("_EmissionColor", Color.red); 
+                mesh.material.color = Color.red;
+                mesh.material.SetColor("_EmissionColor", Color.red);
                 break;
             case TypeMail.Green:
                 mesh.material.color = Color.green;
@@ -28,8 +32,7 @@ public class TriggerMail : MonoBehaviour
                 break;
         }
 
-        LeanTween.moveY(gameObject, transform.position.y + 0.5f,2).setLoopPingPong(-1);
-
+        LeanTween.moveY(gameObject, transform.position.y + 0.5f, 2).setLoopPingPong(-1);
     }
 
     private void OnTriggerEnter(Collider other)

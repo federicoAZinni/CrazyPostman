@@ -12,6 +12,12 @@ public class ProjectilLogic : MonoBehaviour
     [SerializeField] private float capFuerza;
 
     [SerializeField] TypeMail typeMailSelected;
+
+    bool canShoot;
+    private void Start()
+    {
+        canShoot = true;
+    }
     private void Update()
     {
         // Select Type  1 2 3
@@ -19,7 +25,7 @@ public class ProjectilLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) typeMailSelected = TypeMail.Blue;
         if (Input.GetKeyDown(KeyCode.Alpha3)) typeMailSelected = TypeMail.Green;
 
-
+        if (!canShoot) return;
 
         if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.D))
         {
@@ -46,5 +52,7 @@ public class ProjectilLogic : MonoBehaviour
         projectil.typeMail = typeMailSelected;
         projectil.AplicarFuerza(fuerza, direct);
         fuerza = 200;
+        canShoot = false;
+        LeanTween.delayedCall(1, () => { canShoot = true; });
     }
 }

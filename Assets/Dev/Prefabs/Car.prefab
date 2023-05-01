@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6961508268125683419}
   - component: {fileID: 4003880891338377159}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RearLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,9 +687,11 @@ GameObject:
   - component: {fileID: 4612015557990017873}
   - component: {fileID: 9023827176589148779}
   - component: {fileID: 704446799709957582}
+  - component: {fileID: 261786958575332369}
+  - component: {fileID: 261786958575332367}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,6 +813,37 @@ MonoBehaviour:
   der: {fileID: 3311781016640413805}
   capFuerza: 700
   typeMailSelected: 0
+--- !u!65 &261786958575332369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253720270225332932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9360356, y: 2.2192578, z: 4.0690184}
+  m_Center: {x: 0.0017769337, y: 2.030503, z: -0.20067573}
+--- !u!114 &261786958575332367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253720270225332932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28508034698c24d8a195e2d0119ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 4612015557990017873}
+  cam: {fileID: 9023827176589148779}
+  r: {fileID: 523145877724216935}
+  divisionVel: 1.5
+  multiplicacionArriba: 400
+  limiteImpulso: 7000
 --- !u!1 &5546310670633042941
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,8 +855,6 @@ GameObject:
   - component: {fileID: 9078334153327275439}
   - component: {fileID: 1501189049203755127}
   - component: {fileID: 7459467817737654451}
-  - component: {fileID: 1501189049203755121}
-  - component: {fileID: 1501189049203755120}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -896,32 +927,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1501189049203755121
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5546310670633042941}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.979233, y: 1.7004597, z: 2.0163376}
-  m_Center: {x: 0.6810241, y: -0.20000005, z: 0.007168174}
---- !u!65 &1501189049203755120
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5546310670633042941}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.63223416, y: 0.36115134, z: 2.0117214}
-  m_Center: {x: -1.8061525, y: -1.0334756, z: -0.0032407045}
 --- !u!1 &5628972436891570430
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 923105453404588874}
   - component: {fileID: 4095434273023954608}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RearRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9128411944988830639}
   - component: {fileID: 3265729128444648465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrontRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7410217937440770603}
   - component: {fileID: 6851598647949241003}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrontLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
