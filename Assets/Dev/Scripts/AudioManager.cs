@@ -22,8 +22,8 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        Play("MotorEncendido");
-        LeanTween.delayedCall(4, () => 
+        Play("MotorArranque");
+        LeanTween.delayedCall(3.5f, () => 
         {
             Play("MusicaIngame");
             Play("MotorEncendido");

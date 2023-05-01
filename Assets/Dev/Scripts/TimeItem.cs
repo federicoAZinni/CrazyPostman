@@ -37,7 +37,8 @@ public class TimeItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        { 
+        {
+            FindObjectOfType<AudioManager>().Play("PickupReloj");
             GameManager.Instance.time += timeAdded;
             boxCol.enabled = false;
             vfxWave.SetActive(false);
