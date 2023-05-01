@@ -37,7 +37,10 @@ public class TriggerMail : MonoBehaviour
         if (other.TryGetComponent<ProjectilFuerza>(out ProjectilFuerza box))
         {
             if (box.typeMail == typeMail) {
-                LeanTween.scale(gameObject, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => { Destroy(gameObject); });
+                //cambiado destroy por disable
+                LeanTween.scale(gameObject, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => {
+                    gameObject.SetActive(false)
+                    ; });
                 GameManager.Instance.Score ++; }
 
         }
