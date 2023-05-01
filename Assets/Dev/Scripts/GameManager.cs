@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour
         time -= Time.deltaTime;
         
         timeText.text = Mathf.RoundToInt(time).ToString();
+
+        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("Menu");
     }
 
 
