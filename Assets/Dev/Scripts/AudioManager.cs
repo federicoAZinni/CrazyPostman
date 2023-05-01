@@ -16,8 +16,18 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
         }
 
+    }
+    private void Start()
+    {
+        Play("MotorEncendido");
+        LeanTween.delayedCall(4, () => 
+        {
+            Play("MusicaIngame");
+            Play("MotorEncendido");
+        });
     }
 
     // Update is called once per frame
