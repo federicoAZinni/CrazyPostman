@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     public float time;
     private int score;
-
     public int Score { get => score; set { if(value % 3 == 0) MailTriggerCreate(); scoreUI.text = "Score " + value.ToString(); score = value; } }
 
     private void Awake()

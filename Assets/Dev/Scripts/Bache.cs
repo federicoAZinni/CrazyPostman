@@ -16,10 +16,8 @@ public class Bache : MonoBehaviour
     {
         if (other.CompareTag("Obstaculo"))
         {
-            Debug.Log("Se comio un obstaculo");
             r.AddForce(Vector3.up * Mathf.Clamp((r.velocity.magnitude*multiplicacionArriba),100,limiteImpulso),ForceMode.Impulse);
             r.velocity = r.velocity / divisionVel;
-            cam.AnimShakeCamera();
         }
     }
 
