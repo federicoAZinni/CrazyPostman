@@ -38,7 +38,7 @@ public class TriggerMail : MonoBehaviour
         {
             if (box.typeMail == typeMail) {
                 LeanTween.scale(gameObject, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => { Destroy(gameObject); });
-                Debug.Log("Sumar puntos"); }
+                GameManager.Instance.Score ++; }
 
         }
     }

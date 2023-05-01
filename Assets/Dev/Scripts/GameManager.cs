@@ -10,8 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<TriggerMail> listTriggerMails;
     [SerializeField] int cuantoQueremos;
     [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] TextMeshProUGUI scoreUI;
 
     public float time;
+    private int score;
+
+    public int Score { get => score; set { if(value % 3 == 0) MailTriggerCreate(); scoreUI.text = "Score " + value.ToString(); score = value; } }
 
     private void Awake()
     {
@@ -22,6 +26,11 @@ public class GameManager : MonoBehaviour
     {
         time = 120;
 
+        MailTriggerCreate();
+    }
+
+    private void MailTriggerCreate()
+    {
         for (int i = 0; i < cuantoQueremos; i++)
         {
             int random = Random.Range(0, listTriggerMails.Count);
