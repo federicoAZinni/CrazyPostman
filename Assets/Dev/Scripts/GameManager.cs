@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField] List<TriggerMail> listTriggerMails;
     [SerializeField] int cuantoQueremos;
-    [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] Text timeText;
     [SerializeField] TextMeshProUGUI scoreUI;
 
     public float time;
@@ -34,6 +35,12 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < cuantoQueremos; i++)
         {
             int random = Random.Range(0, listTriggerMails.Count);
+
+            while (listTriggerMails[random].gameObject.activeSelf)
+            {
+                random = Random.Range(0, listTriggerMails.Count);
+            }
+
             listTriggerMails[random].typeMail = (TypeMail)Random.Range(0, 3);
             listTriggerMails[random].gameObject.SetActive(true);
         }

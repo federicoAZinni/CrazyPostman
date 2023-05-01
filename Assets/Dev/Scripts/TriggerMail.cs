@@ -39,9 +39,11 @@ public class TriggerMail : MonoBehaviour
             if (box.typeMail == typeMail) {
                 //cambiado destroy por disable
                 LeanTween.scale(gameObject, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => {
-                    gameObject.SetActive(false)
-                    ; });
-                GameManager.Instance.Score ++; }
+                    GameManager.Instance.Score++;
+                    gameObject.SetActive(false);
+                    transform.localScale = Vector3.one;
+                });
+                }
 
         }
     }
