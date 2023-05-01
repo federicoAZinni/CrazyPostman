@@ -24,13 +24,19 @@ public class TriggerMail : MonoBehaviour
             default:
                 break;
         }
+
+        LeanTween.moveY(gameObject, transform.position.y + 0.5f,2).setLoopPingPong(-1);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<ProjectilFuerza>(out ProjectilFuerza box))
         {
-            if (box.typeMail == typeMail) Debug.Log("Sumar puntos");
+            if (box.typeMail == typeMail) {
+                LeanTween.scale(gameObject, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => { Destroy(gameObject); });
+                Debug.Log("Sumar puntos"); }
+
         }
     }
 }
