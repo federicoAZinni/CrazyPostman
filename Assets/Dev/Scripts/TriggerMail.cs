@@ -41,7 +41,7 @@ public class TriggerMail : MonoBehaviour
                 LeanTween.scale(gameObject, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => {
                     GameManager.Instance.Score++;
                     gameObject.SetActive(false);
-                    transform.localScale = Vector3.one;
+                    transform.localScale = Vector3.one* 0.02f;
                 });
                 }
 
