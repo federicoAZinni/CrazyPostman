@@ -13,13 +13,16 @@ public class TriggerMail : MonoBehaviour
         switch (typeMail)
         {
             case TypeMail.Red:
-                mesh.material.color = Color.red;
+                mesh.material.color= Color.red;
+                mesh.material.SetColor("_EmissionColor", Color.red); 
                 break;
             case TypeMail.Green:
                 mesh.material.color = Color.green;
+                mesh.material.SetColor("_EmissionColor", Color.green);
                 break;
             case TypeMail.Blue:
                 mesh.material.color = Color.blue;
+                mesh.material.SetColor("_EmissionColor", Color.blue);
                 break;
             default:
                 break;
