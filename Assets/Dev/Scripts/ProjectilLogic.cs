@@ -61,6 +61,9 @@ public class ProjectilLogic : MonoBehaviour
         LeanTween.cancel(uiboxRed);
         LeanTween.cancel(uiboxGreen);
         LeanTween.cancel(uiboxBlue);
+        uiboxRed.transform.localScale = Vector3.one;
+        uiboxGreen.transform.localScale = Vector3.one;
+        uiboxBlue.transform.localScale = Vector3.one;
 
         switch (TypeMailSelected)
         {
