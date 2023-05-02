@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameFinish = false;
-        time = 5;
+        time = 120;
 
         MailTriggerCreate();
     }
