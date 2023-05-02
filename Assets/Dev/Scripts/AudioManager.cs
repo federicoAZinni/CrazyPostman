@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-
+    public AudioMixerGroup audioMixer;
     public Sound[] sounds;
     // Start is called before the first frame update
     void Awake()
@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = audioMixer;
         }
 
     }
