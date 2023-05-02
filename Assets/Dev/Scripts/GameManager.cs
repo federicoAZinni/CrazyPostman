@@ -12,11 +12,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<TriggerMail> listTriggerMails;
     [SerializeField] int cuantoQueremos;
     [SerializeField] Text timeText;
-    [SerializeField] TextMeshProUGUI scoreUI;
+    [SerializeField] Text scoreUI;
+    [SerializeField] PrometeoCarController car;
+    [SerializeField] Rigidbody carRb;
+
+    [SerializeField] ScoreFinal scoreFinal;
+
 
 
     public float time;
     private int score;
+
+    bool gameFinish;
     public int Score { get => score; set { if(value % 3 == 0) MailTriggerCreate(); scoreUI.text = "X " + value.ToString(); score = value; } }
 
     private void Awake()
@@ -26,7 +33,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        time = 120;
+        gameFinish = false;
+        time = 5;
 
         MailTriggerCreate();
     }
@@ -49,13 +57,28 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (time <= 0) { Debug.Log("Perdiste"); }
+        if (time <= 0)
+        {
+            scoreFinal.StartAnim();
+            return;
+        }
+
+        Finish();
+
         time -= Time.deltaTime;
-        
+
         timeText.text = Mathf.RoundToInt(time).ToString();
 
         if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("Menu");
+
     }
 
-
+    private void Finish()
+    {
+        if (gameFinish)
+        {
+            car.enabled = false;
+            carRb.velocity = Vector3.zero;
+        }
+    }
 }
