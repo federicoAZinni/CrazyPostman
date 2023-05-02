@@ -14,9 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text timeText;
     [SerializeField] TextMeshProUGUI scoreUI;
 
+
     public float time;
     private int score;
-    public int Score { get => score; set { if(value % 3 == 0) MailTriggerCreate(); scoreUI.text = "Score " + value.ToString(); score = value; } }
+    public int Score { get => score; set { if(value % 3 == 0) MailTriggerCreate(); scoreUI.text = "X " + value.ToString(); score = value; } }
 
     private void Awake()
     {
